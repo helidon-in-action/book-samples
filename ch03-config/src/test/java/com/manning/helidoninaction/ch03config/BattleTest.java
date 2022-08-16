@@ -15,11 +15,16 @@ import jakarta.json.stream.JsonGenerator;
 import jakarta.ws.rs.client.WebTarget;
 
 @HelidonTest
-public class SorcererTest {
+public class BattleTest {
+
+    static {
+        // Notice how configuration from system properties take precedence over config file
+        System.setProperty("sorcerer.orcSlayingPotions", "5");
+    }
 
     @Test
     void sorcererPropertiesTest(WebTarget webTarget) {
-        JsonObject entity = webTarget.path("/sorcerer")
+        JsonObject entity = webTarget.path("/battle/sorcerer")
                 .request()
                 .get()
                 .readEntity(JsonObject.class);
@@ -34,7 +39,7 @@ public class SorcererTest {
                     "name": "Merlin",
                     "title": "Merlin_30",
                     "level": 30,
-                    "orcSlayingPotions": 0,
+                    "orcSlayingPotions": 5,
                     "invisibilityCloak": true,
                     "weaponsList": "[axe, sword, wand]",
                     "weaponsArray": "[axe, sword, wand]",

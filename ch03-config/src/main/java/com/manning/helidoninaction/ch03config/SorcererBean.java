@@ -19,15 +19,15 @@ public class SorcererBean {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Collections.emptyMap());
 
-    private String name;
-    private String title;
-    private int level;
-    private int orcSlayingPotions;
-    private boolean invisibilityCloak;
-    private String[] weaponsArray;
-    private List<String> weaponsList;
-    private Set<String> weaponsSet;
-    private SorcererProperties sorcererProperties;
+    private final String name;
+    private final String title;
+    private final int level;
+    private final int orcSlayingPotions;
+    private final boolean invisibilityCloak;
+    private final String[] weaponsArray;
+    private final List<String> weaponsList;
+    private final Set<String> weaponsSet;
+    private final SorcererProperties sorcererProperties;
 
     @Inject
     public SorcererBean(
